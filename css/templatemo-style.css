@@ -85,7 +85,7 @@ h4
     }
 .sk-spinner-rotating-plane.sk-spinner 
     {
-         width: 30px;
+        width: 30px;
         height: 30px;
         background-color: #55acee;         
         -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
@@ -162,10 +162,10 @@ h4
 @media(min-width:768px){
     .custom-navbar
          {
-             padding: 20px 0;
+            padding: 20px 0;
             border-bottom: 0;
-             background: 0 0;
-             transition: all 0.3s ease;
+            background: 0 0;
+            transition: all 0.3s ease;
          }
     .custom-navbar.top-nav-collapse
          {
@@ -207,7 +207,7 @@ h4
     padding: 0;
     position: relative;
     zoom: 1;
-    background-color: #371604;
+    background-color: #000;
     overflow: hidden;
     margin: 0;
     text-align: center;
@@ -255,49 +255,6 @@ h4
 }
 /* end home */
 
-/* start service */
-#service
-    {
-        background: #ffffff;
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-#service .media
-    {
-        padding: 10px;
-    }
-#service .media .fa
-    {
-        color: #55acee;
-        font-size: 60px;
-        margin-right: 20px;
-        width: 65px;
-        height: 65px;
-    }
-#service .media .media-heading
-    {
-        font-weight: 600;
-        font-size: 20px;
-        padding-bottom: 10px;
-    }
-/* end service */
-
-/* start divider */
-.divider
-    {
-        background: url('../images/divider-bg.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        color: #ffffff;
-        text-align: center;
-    }
-.divider .divider-des
-    {
-        padding: 100px 15px;
-    }
-/* end divider */
-
 /* start about */
 h3.about-title {
     margin-top: 0;
@@ -338,127 +295,168 @@ h3.about-title {
         font-size: 20px;
         font-weight: bold;        
     }
+#about img {
+    border-radius: 50%;
+    position: relative;
+    width: 30%;
+}
+
 /* end about */
 
-/* start portfolio */
-#portfolio
+/* start divider */
+.divider
     {
-        background: #fff;
-        border-top: 1px solid #eeeeee;
-        border-bottom: 1px solid #eeeeee;
-        padding-top: 80px;
+        background: url('../images/bg/divider-bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #ffffff;
+        text-align: center;
+    }
+.divider .divider-des
+    {
+        padding: 100px 15px;
+    }
+/* end divider */
+
+/* start portfolio */
+
+#portfolio {
+  padding-bottom: 0;
+}
+#filters {
+  text-align: center;
+}
+#filters > li {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+#filters > li:hover,
+#filters > li.active {
+  color: #111;
+}
+#filters > li:after {
+  content: 'Ã‚Â·';
+  position: absolute;
+  left: 100%;
+  color: #535353;
+}
+#filters > li:last-child:after {
+  content: none;
+}
+#works-list {
+  margin-top: 50px;
+}
+#works-list li {  
+  overflow: hidden;
+/*  display: none;*/
+  float: left;
+  width: 25%;
+/*  opacity: 0;*/
+}
+#works-list li:hover img {
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+#works-list li:hover .text-holder {
+  opacity: 1;
+}
+#works-list li:hover .text-holder .text-middle {
+  -webkit-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+#works-list li img {
+  width: 100%;
+  transition: all .3s ease;
+}
+#works-list li a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+}
+#works-list li a:hover {
+  background-color: transparent;
+}
+.text-holder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0.5);
+  opacity: 0;
+  transition: all .3s ease;
+}
+.text-caption {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.text-middle {
+  display: table-cell;
+  vertical-align: middle;
+  color: #fff;
+  transition: all .3s ease;
+  -webkit-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  padding-bottom: 60%;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* end portfolio */
+
+
+/* start service */
+#service
+    {
+        background: #ffffff;
+        padding-top: 40px;
         padding-bottom: 80px;
     }
-#portfolio .portfolio-thumb
+#service .media
     {
-        overflow: hidden;
-        margin: 0;
-        position: relative;
+        padding: 10px;
     }
-#portfolio .portfolio-thumb .portfolio-overlay
+#service .media .fa
     {
-        background: #333;
-        color: #ffffff;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-justify-content: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        position: absolute;
-        opacity: 0;
-        transition: all 0.4s ease-in-out;
+        color: #55acee;
+        font-size: 60px;
+        margin-right: 20px;
+        width: 65px;
+        height: 65px;
     }
-#portfolio .portfolio-thumb:hover .portfolio-overlay
+#service .media .media-heading
     {
-        opacity: 0.9;
-    }
-#portfolio .portfolio-thumb .portfolio-overlay .fa
-    {
-        border: 1px solid #ffffff;
-        border-radius: 50%;
-        color: #ffffff;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        text-decoration: none;
-        margin-right: 6px;
-        margin-bottom: 10px;
-        transition: all 0.3s ease;
-    }
-#portfolio .portfolio-thumb .portfolio-overlay .fa:hover {
-    background: #55acee;
-    border-color: #55acee;
-}
-#portfolio .portfolio-thumb .portfolio-overlay h4
-    {
+        font-weight: 600;
+        font-size: 20px;
         padding-bottom: 10px;
     }
-    .portfolio-description {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-/*filter css*/
-.filter-wrapper {
-    width: 100%;
-    margin: 0 0 24px 0;
-    padding: 0;
-    overflow: hidden;
-    text-align: center;
-}
-.filter-wrapper li {
-    display: inline-block;
-    margin: 4px;
-    transition: all 0.3s ease;
-}
-.filter-wrapper li:hover {
-    background: #55acee;
-}
-.filter-wrapper li:hover a {
-    color: #fff;
-}
-.filter-wrapper li a {
-    border: 1px solid #f2f2f2;
-    color: #999;
-    padding: 8px 17px;
-    display: block;
-    text-decoration: none;
-}
-/*isotope box css*/
-.iso-box-section {
-    width: 100%;
-    margin: 0 0 24px 0;
-}
-.iso-box-wrapper {
-    width: 100%;
-    padding: 0;
-    clear: both;
-    position: relative;
-}
-.iso-box {
-    position: relative;
-    min-height: 50px;
-    float: left;
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-.fluid-img {
-    width: 100%;
-    display: block;
-    height: auto;
-}
-/* end portfolio */
+/* end service */
 
 /* start contact */
 #contact
@@ -496,9 +494,9 @@ h3.about-title {
 /* start footer */
 footer
     {
-        background: #202020;
+        background: #000;
         color: #ffffff;
-        padding-top: 60px;
+        padding-top: 30px;
         padding-bottom: 60px;
         text-align: center;
     }
